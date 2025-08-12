@@ -1,0 +1,22 @@
+# Frontend
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.vite/
+
+# Backend
+backend/venv/
+backend/__pycache__/
+backend/.env
+*.pyc
+
+# ROS bridge artifacts (if any)
+backend/*.launch.pyc
+
+# General
+.DS_Store
+*.log
+*.swp
+*.swo
+.idea/
+.vscode/
