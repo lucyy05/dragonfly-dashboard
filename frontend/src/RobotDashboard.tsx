@@ -3,9 +3,9 @@ import axios from 'axios';
 
 import TeleopSection from './components/TeleopSection';
 
-// API Configuration Ensure URLs are SERVER IPs
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:8000';
-const WS_URL = process.env.REACT_APP_WS_URL || 'ws://localhost:8000/ws/robot-data';
+// API configuration: derive WS URL from API_BASE or current host to avoid hardcoding
+const API_BASE = process.env.REACT_APP_API_URL || `http://${window.location.hostname}:8000`;
+const WS_URL = process.env.REACT_APP_WS_URL || `${API_BASE.replace(/^http(s?):/, 'ws$1:')}/ws/robot-data`;
 
 interface RobotStatus {
   state: string;
